@@ -1,16 +1,17 @@
-import psutil;
-from flask import Flask , render_template
-import os
+from flask import Flask, render_template
+import psutil
 
 app = Flask(__name__)
-@app.route("/")
+
+@app.route('/')
 def index():
     cpu_percent = psutil.cpu_percent()
     mem_percent = psutil.virtual_memory().percent
-    Message = None 
-    if cpu_percent > 80 or mem_percent >80:
-        Message = " High CPU / Memory utilization "
-    return render_template("index.html" , cpu_metric = cpu_percent , mem_metric=mem_percent, message=Message)
+    message = None 
+    if cpu_percent > 80 or mem_percent > 80:
+        message = "High CPU / Memory utilization"
+    return render_template("index.html", cpu_metric=cpu_percent, mem_metric=mem_percent, message=message)
 
 if __name__ == '__main__':
-    app.run(debug=True,host='0.0.0.0')
+    app.run(debug=True)
+
