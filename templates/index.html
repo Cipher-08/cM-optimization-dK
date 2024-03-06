@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Monitoring Dashboard</title>
+</head>
+<body>
+    <h1>System Monitoring Dashboard</h1>
+    <p>CPU Utilization: {{ cpu_metric }}%</p>
+    <p>Memory Utilization: {{ mem_metric }}%</p>
+    {% if message %}
+    <p>{{ message }}</p>
+    {% endif %}
+</body>
+</html>
+
