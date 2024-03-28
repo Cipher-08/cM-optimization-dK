@@ -1,8 +1,5 @@
 import boto3
 
-aws_access_key_id = 'AKIAZQ3DQ4GWRVR332OF'
-aws_secret_access_key = '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'
-aws_region = 'us-east-1'
 
 ecr_client = boto3.client('ecr',
                           aws_access_key_id=aws_access_key_id,
